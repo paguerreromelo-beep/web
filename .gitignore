@@ -1,0 +1,11 @@
+# Archivos de la herramienta de diseño (no son parte del sitio publicado)
+*.dc.html
+.thumbnail
+uploads/
+screenshots/
+
+# Locales
+.claude/
+.DS_Store
+Thumbs.db
+desktop.ini

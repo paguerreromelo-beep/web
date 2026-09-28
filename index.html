@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<title>CGuerrero Construcciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Lexend:wght@300;400;500;600&amp;display=swap">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+section,header{scroll-margin-top:92px}
+body{margin:0;background:#F8F9FA;color:#0B2126;font-family:Lexend,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:#006D77}
+a:hover{color:#00A8AB}
+:focus-visible{outline:3px solid #F4D6A6;outline-offset:3px}
+input,textarea,select,button{font:inherit;color:inherit}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes sweep{from{transform:translateX(-101%)}to{transform:translateX(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(244,214,166,.55)}70%{box-shadow:0 0 0 16px rgba(244,214,166,0)}}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(7px);opacity:1}}
+@keyframes wipeIn{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes vReveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes vLine{0%{left:0;opacity:0}6%{opacity:1}94%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes vBar{from{width:0%}to{width:100%}}
+@keyframes vT1{0%,40%{opacity:1}60%,100%{opacity:0}}
+@keyframes vT2{0%,40%{opacity:0}60%,100%{opacity:1}}
+@supports (animation-timeline: view()){
+  [data-vision]{view-timeline-name:--vis;view-timeline-axis:block}
+  .vwipe,.vline,.vbar,.vt1,.vt2{animation-duration:1s;animation-timing-function:linear;animation-fill-mode:both;animation-timeline:--vis;animation-range:contain 0% contain 100%}
+  .vwipe{animation-name:vReveal}
+  .vline{animation-name:vLine}
+  .vbar{animation-name:vBar}
+  .vt1{animation-name:vT1}
+  .vt2{animation-name:vT2}
+}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline: view()){
+    .rv{animation:rise .85s cubic-bezier(.16,.84,.3,1) both;animation-timeline:view();animation-range:entry 0% cover 26%}
+    .sw{animation:sweep 1.1s cubic-bezier(.2,.8,.2,1) both;animation-timeline:view();animation-range:entry 10% cover 30%}
+    .rv2{animation:rise .95s cubic-bezier(.16,.84,.3,1) both;animation-timeline:view();animation-range:entry 4% cover 34%}
+    .wp{animation:wipeIn 1.2s cubic-bezier(.22,.8,.2,1) both;animation-timeline:view();animation-range:entry 2% cover 32%}
+  }
+  .kb{animation:kb 22s ease-out both}
+  .bob{animation:bob 2.4s ease-in-out infinite}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+
+<div style="--deep:#05343A;--deep2:#0A464E;--teal:#006D77;--aqua:#00A8AB;--mist:#7DD3CE;--sand:#F4D6A6;--sand-hi:#FFE7BE;--amber:#9C6316;--paper:#F8F9FA;--paper2:#EDF3F3;--ink:#0B2126;--ink2:#3D5A5F;--ink3:#6B8388;--line:#D4E2E2;background:#F8F9FA">
+
+<nav data-nav="" style="position:fixed;left:0;right:0;top:0;z-index:50;background:linear-gradient(to bottom,rgba(5,52,58,.72),rgba(5,52,58,0));backdrop-filter:blur(0px);border-bottom:1px solid rgba(125,211,206,0);transition:background-color .35s,backdrop-filter .35s,border-color .35s,background-image .35s">
+  <div data-nav-inner="" style="max-width:1280px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:28px;height:84px;transition:height .35s cubic-bezier(.2,.8,.2,1)">
+    <a href="#top" aria-label="CGuerrero, inicio" style="display:flex;align-items:center;gap:11px;flex:none;text-decoration:none">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true" style="width:36px;height:36px;flex:none">
+        <path d="M4 33 L20 5 L36 33 Z" stroke="#7DD3CE" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M12 33 L20 19 L28 33" stroke="#F4D6A6" stroke-width="2.4" stroke-linejoin="round"></path>
+        <path d="M4 33 H36" stroke="#00A8AB" stroke-width="2.4" stroke-linecap="round"></path>
+      </svg>
+      <span>
+        <span style="display:block;font-family:Archivo,sans-serif;font-weight:800;font-size:1.12rem;letter-spacing:-.02em;color:#fff;line-height:1.1">CGuerrero</span>
+        <span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:#7DD3CE;text-transform:uppercase">Construcciones</span>
+      </span>
+    </a>
+    <div style="display:flex;gap:26px;margin-left:auto;align-items:center" data-nav-links="">
+      <a href="#servicios" style="color:#CFE4E4;text-decoration:none;font-size:.92rem;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#fff;border-bottom-color:#F4D6A6">Servicios</a>
+      <a href="#obras" style="color:#CFE4E4;text-decoration:none;font-size:.92rem;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#fff;border-bottom-color:#F4D6A6">Obras</a>
+      <a href="#nosotros" style="color:#CFE4E4;text-decoration:none;font-size:.92rem;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#fff;border-bottom-color:#F4D6A6">Nosotros</a>
+      <a href="#proceso" style="color:#CFE4E4;text-decoration:none;font-size:.92rem;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#fff;border-bottom-color:#F4D6A6">Cómo trabajamos</a>
+    </div>
+    <a href="#cotizar" style="display:inline-flex;align-items:center;gap:9px;background:#F4D6A6;color:#05343A;font-family:Archivo,sans-serif;font-weight:700;font-size:.88rem;padding:12px 20px;min-height:46px;border-radius:3px;text-decoration:none;box-shadow:0 4px 0 0 #D8B87E;transition:background-color .18s,box-shadow .18s,transform .18s" style-hover="background:#FFE7BE;box-shadow:0 6px 0 0 #D8B87E;transform:translateY(-2px)" style-active="box-shadow:0 2px 0 0 #D8B87E;transform:translateY(1px)">Pedir cotización</a>
+  </div>
+</nav>
+
+<div aria-hidden="true" data-top-sentinel="1" style="position:absolute;top:0;left:0;width:1px;height:96px;pointer-events:none"></div>
+
+<header id="top" style="position:relative;background:#05343A;color:#fff;overflow:hidden;isolation:isolate;min-height:100vh;display:flex;align-items:center">
+  <img class="kb" src="assets/obra-aerea-hd.jpg" width="2200" height="1231" alt="Vista aérea de estructura metálica y explanación de un stripcenter en construcción" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transform-origin:62% 52%">
+  <div data-hero-grid="1" style="position:relative;z-index:2;width:100%;max-width:1280px;margin:0 auto;padding:142px 28px 84px;display:grid;grid-template-columns:minmax(0,668px) 1fr">
+    <div style="background:#05343A;border-left:4px solid #F4D6A6;padding:44px 42px 40px">
+    <p style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7DD3CE;margin:0 0 20px">
+      <span aria-hidden="true" style="width:28px;height:2px;background:#7DD3CE;flex:none"></span>Obras civiles · Edificación · Estructuras
+    </p>
+    <h1 style="font-family:Archivo,sans-serif;font-size:clamp(2.6rem,7.6vw,5.9rem);font-weight:900;line-height:.95;letter-spacing:-.045em;margin:0 0 26px;max-width:18ch;text-wrap:balance">Construimos lo que<span style="display:block;font-weight:300;color:#7DD3CE;letter-spacing:-.03em">tu negocio necesita.</span></h1>
+    <p style="font-size:clamp(1.05rem,2vw,1.28rem);color:#C7DDDD;max-width:52ch;margin:0 0 34px;font-weight:300">En Constructora Guerrero realizamos proyectos comerciales, industriales y de infraestructura en la zona centro sur. Nos hacemos cargo de la obra de principio a fin, con maquinaria y especialistas profesionales.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:20px">
+      <a href="#cotizar" style="display:inline-flex;align-items:center;gap:11px;background:#F4D6A6;color:#05343A;font-family:Archivo,sans-serif;font-weight:800;font-size:1.02rem;padding:17px 30px;min-height:58px;border-radius:3px;text-decoration:none;box-shadow:0 5px 0 0 #D8B87E;transition:background-color .18s,box-shadow .18s,transform .18s" style-hover="background:#FFE7BE;box-shadow:0 8px 0 0 #D8B87E;transform:translateY(-3px)" style-active="box-shadow:0 2px 0 0 #D8B87E;transform:translateY(2px)">
+        Pedir cotización
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+      <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;border:2px solid rgba(125,211,206,.5);color:#7DD3CE;background:transparent;font-family:Archivo,sans-serif;font-weight:700;font-size:.98rem;padding:15px 26px;min-height:58px;border-radius:3px;text-decoration:none;transition:background-color .2s,border-color .2s,color .2s" style-hover="border-color:#7DD3CE;background:rgba(125,211,206,.12);color:#fff">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:19px;height:19px"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"></path><path d="M12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"></path></svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;color:#8FB2B2;margin:0 0 52px;text-transform:uppercase">TE CONTESTAMOS EL MISMO DÍA · RESPUESTA EN MENOS DE 24 HORAS</p>
+    <dl style="display:flex;flex-wrap:wrap;gap:14px 42px;border-top:1px solid rgba(125,211,206,.22);padding-top:26px;margin:0">
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <dt style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#7DD3CE">Experiencia</dt>
+        <dd style="margin:0;font-family:Archivo,sans-serif;font-weight:700;font-size:1.02rem;color:#fff">{{ aniosTexto }}</dd>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <dt style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#7DD3CE">Alcance</dt>
+        <dd style="margin:0;font-family:Archivo,sans-serif;font-weight:700;font-size:1.02rem;color:#fff">Obra completa o por partida</dd>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <dt style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#7DD3CE">Cobertura</dt>
+        <dd style="margin:0;font-family:Archivo,sans-serif;font-weight:700;font-size:1.02rem;color:#fff">Zona centro sur, llegamos a tu región</dd>
+      </div>
+    </dl>
+    </div>
+  </div>
+</header>
+
+<div style="background:#006D77;color:#fff;padding:20px 0;overflow:hidden">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:12px 38px;align-items:center;justify-content:center">
+    <sc-for list="{{ capacidades }}" as="cap" hint-placeholder-count="6">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;display:flex;align-items:center;gap:9px;color:#DFF1F1">
+        <span aria-hidden="true" style="width:5px;height:5px;background:#F4D6A6;flex:none;transform:rotate(45deg)"></span>{{ cap }}
+      </span>
+    </sc-for>
+  </div>
+</div>
+
+<section style="padding:96px 0 90px;background:#F8F9FA">
+  <div style="max-width:1280px;margin:0 auto;padding:0 28px">
+    <div class="rv" style="display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end;margin-bottom:38px" data-intro-grid="">
+      <h2 style="font-family:Archivo,sans-serif;font-size:clamp(2.1rem,4.8vw,3.5rem);font-weight:800;letter-spacing:-.04em;line-height:1.02;margin:0;text-wrap:balance">Nos dedicamos a una sola cosa:<span style="display:block;font-weight:300;color:#006D77">construir bien.</span></h2>
+      <div>
+        <p style="font-size:1.06rem;color:#3D5A5F;font-weight:300;margin:0 0 18px">No somos una oficina que subcontrata todo. Tenemos equipo en faena, maquinaria y especialistas, y por eso podemos responder por el plazo y por el resultado de cada partida.</p>
+        <a href="#nosotros" style="display:inline-flex;align-items:center;gap:10px;font-family:Archivo,sans-serif;font-weight:700;font-size:.95rem;color:#006D77;text-decoration:none;border-bottom:2px solid rgba(0,109,119,.3);padding-bottom:5px;transition:gap .25s,border-color .25s,color .25s" style-hover="gap:16px;border-bottom-color:#006D77;color:#05343A">
+          Conoce a CGuerrero
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="width:17px;height:17px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(130px,16vw,190px);gap:14px" data-mosaic="">
+      <figure class="rv2" style="margin:0;grid-column:1;grid-row:1/3;overflow:hidden;position:relative;background:#EDF3F3">
+        <img loading="lazy" decoding="async" src="assets/obra-losa-hd.jpg" alt="Enfierradura y moldaje de losa lista para hormigonar" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.07)">
+        <figcaption style="position:absolute;left:0;bottom:0;background:rgba(5,52,58,.88);color:#DFF1F1;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px">Obra gruesa</figcaption>
+      </figure>
+      <figure class="rv2" style="margin:0;grid-column:2;grid-row:1;overflow:hidden;position:relative;background:#EDF3F3">
+        <img loading="lazy" decoding="async" src="assets/obra-aerea-hd.jpg" alt="Vista aérea de estructura metálica en construcción" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.07)">
+      </figure>
+      <figure class="rv2" style="margin:0;grid-column:3/5;grid-row:1;overflow:hidden;position:relative;background:#EDF3F3">
+        <img loading="lazy" decoding="async" src="assets/faena-equipo.jpg" alt="Equipo de CGuerrero en reunión de seguridad al inicio de la jornada" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.07)">
+      </figure>
+      <figure class="rv2" style="margin:0;grid-column:2/4;grid-row:2;overflow:hidden;position:relative;background:#EDF3F3">
+        <img loading="lazy" decoding="async" src="assets/vision-construido.jpg" alt="Stripcenter terminado y entregado" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.07)">
+      </figure>
+      <figure class="rv2" style="margin:0;grid-column:4;grid-row:2;overflow:hidden;position:relative;background:#EDF3F3">
+        <img loading="lazy" decoding="async" src="assets/obra-puente-hd.jpg" alt="Montaje de viga metálica de puente" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.07)">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" style="padding:94px 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+    <div class="rv" style="max-width:66ch">
+      <p style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#00A8AB;margin:0 0 18px">
+        <span aria-hidden="true" style="width:28px;height:2px;background:#00A8AB;flex:none"></span>Servicios
+      </p>
+      <h2 style="font-family:Archivo,sans-serif;font-size:clamp(2rem,4.4vw,3.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 20px;text-wrap:balance">Todo lo que la obra necesita, con un solo contrato.</h2>
+      <p style="font-size:1.08rem;color:#3D5A5F;margin:0 0 50px;font-weight:300">Tomamos el proyecto completo o solo la partida que falta. Si hay que sumar maquinaria o una especialidad, la ponemos nosotros y el trato lo sigues haciendo con una sola persona.</p>
+    </div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:1px;background:#D4E2E2;border:1px solid #D4E2E2">
+      <sc-for list="{{ servicios }}" as="s" hint-placeholder-count="6">
+        <article style="background:#F8F9FA;padding:34px 30px 32px;position:relative;overflow:hidden;transition:background-color .25s,box-shadow .25s,transform .25s" style-hover="background:#fff;box-shadow:inset 0 3px 0 0 #F4D6A6,0 18px 40px -30px rgba(5,52,58,.6);transform:translateY(-2px)">
+          <div style="width:42px;height:42px;color:#006D77;margin-bottom:20px">{{ s.ico }}</div>
+          <h3 style="font-family:Archivo,sans-serif;font-size:1.16rem;font-weight:700;letter-spacing:-.015em;margin:0 0 10px">{{ s.t }}</h3>
+          <p style="margin:0;font-size:.95rem;color:#3D5A5F;font-weight:300;line-height:1.6">{{ s.d }}</p>
+          <sc-if value="{{ s.tag }}" hint-placeholder-val="{{ false }}">
+            <span style="display:inline-block;margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#9C6316;border:1px solid #F4D6A6;padding:4px 9px;border-radius:2px">{{ s.tag }}</span>
+          </sc-if>
+        </article>
+      </sc-for>
+    </div>
+    <div class="rv" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:34px;padding:26px 30px;background:#EDF3F3;border:1px solid #D4E2E2;border-left:4px solid #006D77">
+      <p style="margin:0;font-size:1.02rem;color:#0B2126;max-width:52ch">¿Ya tienes planos o una idea de metros cuadrados? Con eso podemos darte un precio esta semana.</p>
+      <a href="#cotizar" style="display:inline-flex;align-items:center;gap:9px;background:#006D77;color:#fff;font-family:Archivo,sans-serif;font-weight:700;font-size:.95rem;padding:15px 26px;min-height:52px;border-radius:3px;text-decoration:none;flex:none;transition:background-color .2s,transform .2s,box-shadow .2s" style-hover="background:#05343A;transform:translateY(-2px);box-shadow:0 14px 26px -16px rgba(5,52,58,.7)">
+        Cotizar mi obra
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="width:17px;height:17px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="vision" data-vision="" style="position:relative;height:280vh;background:#05343A">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden">
+    <img loading="lazy" decoding="async" src="assets/vision-render.jpg" alt="Visualización del proyecto antes de construirlo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,52,58,.86) 0%,rgba(5,52,58,.68) 45%,rgba(5,52,58,.74) 100%)"></div>
+    <img class="vwipe" data-vision-b="" src="assets/vision-construido.jpg" alt="El mismo proyecto ya construido y entregado" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;clip-path:inset(0 100% 0 0)">
+    <div aria-hidden="true" class="vline" data-vision-line="" style="position:absolute;top:0;bottom:0;left:0;width:2px;background:#F4D6A6;box-shadow:0 0 28px 6px rgba(244,214,166,.45);opacity:0"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,52,58,.72) 0%,rgba(5,52,58,.3) 45%,rgba(5,52,58,.44) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 28px">
+      <div style="position:relative;width:100%;max-width:1280px;text-align:center">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#EAF7F6;margin:0 0 22px">Del plano a la entrega</p>
+        <div style="position:relative;height:clamp(3.4rem,9vw,7.4rem)">
+          <h2 class="vt1" data-vision-t1="" style="position:absolute;inset:0;margin:0;display:flex;align-items:center;justify-content:center;font-family:Archivo,sans-serif;font-size:clamp(2.6rem,8vw,6.4rem);font-weight:300;letter-spacing:-.04em;line-height:1;color:#fff;text-shadow:0 4px 40px rgba(5,52,58,.6)">Si puedes <b style="font-weight:900;margin-left:.28em">imaginarlo</b></h2>
+          <h2 class="vt2" data-vision-t2="" style="position:absolute;inset:0;margin:0;display:flex;align-items:center;justify-content:center;font-family:Archivo,sans-serif;font-size:clamp(2.6rem,8vw,6.4rem);font-weight:300;letter-spacing:-.04em;line-height:1;color:#fff;text-shadow:0 4px 40px rgba(5,52,58,.6);opacity:0">nosotros <b style="font-weight:900;margin-left:.28em">lo construimos</b></h2>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center">
+      <div style="width:min(420px,60vw);height:3px;background:rgba(255,255,255,.22);overflow:hidden">
+        <span class="vbar" data-vision-bar="" style="display:block;height:100%;width:0%;background:#F4D6A6"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="obras" style="background:#05343A;color:#fff;padding:94px 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+    <div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;max-width:100%;margin-bottom:44px">
+      <div style="max-width:60ch">
+        <p style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7DD3CE;margin:0 0 18px">
+          <span aria-hidden="true" style="width:28px;height:2px;background:#7DD3CE;flex:none"></span>Obras
+        </p>
+        <h2 style="font-family:Archivo,sans-serif;font-size:clamp(2rem,4.4vw,3.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 16px;color:#fff;text-wrap:balance">Tipos de obras que construimos:</h2>
+        <p style="font-size:1.08rem;color:#C7DDDD;font-weight:300;margin:0">Si necesitas algo similar o personalizado, consulta el registro completo.</p>
+      </div>
+      <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;color:#F4D6A6;font-family:Archivo,sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;border-bottom:2px solid rgba(244,214,166,.35);padding-bottom:5px;transition:border-color .2s,gap .2s" style-hover="border-bottom-color:#F4D6A6;gap:14px">
+        Ver más obras
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="width:17px;height:17px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+    <div class="rv" style="position:relative;overflow:hidden;background:#0A464E;border:1px solid rgba(125,211,206,.22);height:clamp(380px,58vh,620px)">
+      <figure data-slide="1" style="margin:0;position:absolute;inset:0;opacity:1;transition:opacity .85s cubic-bezier(.4,0,.2,1)">
+        <img loading="lazy" decoding="async" src="assets/obra-puente-hd.jpg" alt="Viga metálica de puente montada sobre estribo de hormigón" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s cubic-bezier(.2,.8,.2,1)">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,52,58,.94) 0%,rgba(5,52,58,.25) 48%,rgba(5,52,58,0) 100%)"></div>
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:34px 32px 30px;display:flex;flex-direction:column;gap:7px;max-width:62ch">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#7DD3CE">Infraestructura vial</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(1.2rem,2.6vw,1.9rem);letter-spacing:-.025em;color:#fff;line-height:1.1">Montaje de puente y estribos de hormigón</span>
+          <span style="font-size:.96rem;color:#C7DDDD;font-weight:300">Movimiento de tierra, fundaciones y montaje de viga metálica con grúa.</span>
+        </figcaption>
+      </figure>
+      <figure data-slide="1" style="margin:0;position:absolute;inset:0;opacity:0;transition:opacity .85s cubic-bezier(.4,0,.2,1)">
+        <img loading="lazy" decoding="async" src="assets/obra-aerea-hd.jpg" alt="Vista aérea de estructura metálica de edificio comercial en construcción" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s cubic-bezier(.2,.8,.2,1)">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,52,58,.94) 0%,rgba(5,52,58,.25) 48%,rgba(5,52,58,0) 100%)"></div>
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:34px 32px 30px;display:flex;flex-direction:column;gap:7px;max-width:62ch">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#7DD3CE">Comercial</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(1.2rem,2.6vw,1.9rem);letter-spacing:-.025em;color:#fff;line-height:1.1">Estructura y explanación de stripcenter</span>
+          <span style="font-size:.96rem;color:#C7DDDD;font-weight:300">Explanación del terreno, radier y estructura de acero lista para terminaciones.</span>
+        </figcaption>
+      </figure>
+      <figure data-slide="1" style="margin:0;position:absolute;inset:0;opacity:0;transition:opacity .85s cubic-bezier(.4,0,.2,1)">
+        <img loading="lazy" decoding="async" src="assets/obra-losa-hd.jpg" alt="Enfierradura y moldaje de losa lista para hormigonar" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s cubic-bezier(.2,.8,.2,1)">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,52,58,.94) 0%,rgba(5,52,58,.25) 48%,rgba(5,52,58,0) 100%)"></div>
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:34px 32px 30px;display:flex;flex-direction:column;gap:7px;max-width:62ch">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#7DD3CE">Obra gruesa</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(1.2rem,2.6vw,1.9rem);letter-spacing:-.025em;color:#fff;line-height:1.1">Enfierradura y moldaje de losa</span>
+          <span style="font-size:.96rem;color:#C7DDDD;font-weight:300">Armadura, moldaje y hormigonado con control de resistencia por probeta.</span>
+        </figcaption>
+      </figure>
+      <figure data-slide="1" style="margin:0;position:absolute;inset:0;opacity:0;transition:opacity .85s cubic-bezier(.4,0,.2,1)">
+        <img loading="lazy" decoding="async" src="assets/vision-construido.jpg" alt="Stripcenter terminado y entregado" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s cubic-bezier(.2,.8,.2,1)">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,52,58,.94) 0%,rgba(5,52,58,.25) 48%,rgba(5,52,58,0) 100%)"></div>
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:34px 32px 30px;display:flex;flex-direction:column;gap:7px;max-width:62ch">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#7DD3CE">Retail</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(1.2rem,2.6vw,1.9rem);letter-spacing:-.025em;color:#fff;line-height:1.1">Stripcenter terminado y recibido</span>
+          <span style="font-size:.96rem;color:#C7DDDD;font-weight:300">Obra completa: estructura, instalaciones, terminaciones y recepción municipal.</span>
+        </figcaption>
+      </figure>
+      <div style="position:absolute;right:26px;bottom:28px;display:flex;align-items:center;gap:12px;z-index:3">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;color:#DFF1F1;margin-right:6px">{{ contador }}</span>
+        <button type="button" onClick="{{ prev }}" aria-label="Obra anterior" style="width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:rgba(5,52,58,.55);border:1px solid rgba(125,211,206,.45);color:#fff;cursor:pointer;border-radius:2px;transition:background-color .22s,border-color .22s,transform .22s" style-hover="background:#F4D6A6;border-color:#F4D6A6;color:#05343A;transform:translateY(-2px)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="width:20px;height:20px"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+        </button>
+        <button type="button" onClick="{{ next }}" aria-label="Obra siguiente" style="width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:rgba(5,52,58,.55);border:1px solid rgba(125,211,206,.45);color:#fff;cursor:pointer;border-radius:2px;transition:background-color .22s,border-color .22s,transform .22s" style-hover="background:#F4D6A6;border-color:#F4D6A6;color:#05343A;transform:translateY(-2px)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+      <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:3px;background:rgba(125,211,206,.18);z-index:3">
+        <span style="display:block;height:100%;background:#F4D6A6;width:{{ progreso }};transition:width .85s cubic-bezier(.4,0,.2,1)"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="valor" style="padding:94px 0;background:#EDF3F3">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+    <div style="display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:start" data-valor-grid="">
+      <div class="rv">
+        <p style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#00A8AB;margin:0 0 18px">
+          <span aria-hidden="true" style="width:28px;height:2px;background:#00A8AB;flex:none"></span>Por qué nosotros
+        </p>
+        <p style="font-family:Archivo,sans-serif;font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin:0 0 22px;color:#0B2126;text-wrap:balance">Una obra, <mark style="background:none;color:#006D77">una contraparte.</mark></p>
+        <p style="color:#3D5A5F;font-weight:300;margin:0 0 26px">
+          Lo difícil no es encontrar quién construya, lo difícil es que la obra dependa de demasiadas manos. En CGuerrero coordinamos y respondemos por el resultado, en plazo y en presupuesto.
+        </p>
+        <div style="position:relative;overflow:hidden;border:1px solid #D4E2E2">
+          <img loading="lazy" decoding="async" src="assets/obra-aerea-hd.jpg" alt="Faena en ejecución con maquinaria y estructura metálica" style="width:100%;height:260px;object-fit:cover;display:block">
+          <span style="position:absolute;left:0;bottom:0;background:rgba(5,52,58,.9);color:#DFF1F1;font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;padding:9px 14px">Maquinaria y equipo propio en faena</span>
+        </div>
+      </div>
+      <ul class="rv" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0">
+        <sc-for list="{{ ventajas }}" as="v" hint-placeholder-count="4">
+          <li style="display:flex;gap:16px;padding:22px 18px;border-bottom:1px solid #D4E2E2;background:transparent;transition:background-color .22s,padding-left .22s" style-hover="background:#fff;padding-left:24px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="width:21px;height:21px;color:#006D77;flex:none;margin-top:4px"><path d="M20 6L9 17l-5-5"></path></svg>
+            <div>
+              <b style="display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:1.02rem;color:#0B2126;margin-bottom:4px">{{ v.t }}</b>
+              <span style="font-size:.94rem;color:#3D5A5F;font-weight:300;line-height:1.55">{{ v.d }}</span>
+            </div>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="proceso" style="background:#0A464E;color:#fff;padding:94px 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+    <div class="rv" style="max-width:64ch">
+      <p style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#7DD3CE;margin:0 0 18px">
+        <span aria-hidden="true" style="width:28px;height:2px;background:#7DD3CE;flex:none"></span>Cómo trabajamos
+      </p>
+      <h2 style="font-family:Archivo,sans-serif;font-size:clamp(2rem,4.4vw,3.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 16px;color:#fff">Cinco etapas, siempre las mismas.</h2>
+      <p style="font-size:1.08rem;color:#C7DDDD;font-weight:300;margin:0 0 46px">Cada obra pasa por esta secuencia, así sabes en qué punto va la tuya en cualquier momento.</p>
+    </div>
+    <div class="rv" style="position:relative">
+      <div aria-hidden="true" style="position:relative;height:2px;background:rgba(125,211,206,.2);margin-bottom:0;overflow:hidden">
+        <span class="sw" style="position:absolute;inset:0;background:linear-gradient(90deg,#7DD3CE,#F4D6A6);display:block"></span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr))" data-proc-grid="">
+        <sc-for list="{{ etapas }}" as="e" hint-placeholder-count="5">
+          <article style="padding:28px 22px 26px;border-left:1px solid rgba(125,211,206,.2);transition:background-color .22s" style-hover="background:rgba(125,211,206,.06)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;color:#F4D6A6;letter-spacing:.1em;margin-bottom:14px;display:block">{{ e.n }}</span>
+            <h3 style="font-family:Archivo,sans-serif;font-size:1.04rem;font-weight:700;margin:0 0 8px;letter-spacing:-.01em;color:#fff">{{ e.t }}</h3>
+            <p style="margin:0;font-size:.9rem;color:#AEC9C9;font-weight:300;line-height:1.55">{{ e.d }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cotizar" style="padding:94px 0;background:#F8F9FA">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+    <div style="display:grid;grid-template-columns:1fr 1.08fr;gap:52px;align-items:start" data-cot-grid="">
+      <div class="rv">
+        <p style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#00A8AB;margin:0 0 18px">
+          <span aria-hidden="true" style="width:28px;height:2px;background:#00A8AB;flex:none"></span>Cotiza tu proyecto
+        </p>
+        <h2 style="font-family:Archivo,sans-serif;font-size:clamp(2rem,4.4vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 18px;text-wrap:balance">Cuéntanos qué necesitas construir.</h2>
+        <p style="font-size:1.06rem;color:#3D5A5F;font-weight:300;margin:0 0 30px">
+          Con lo que tengas a mano basta: un plano, una idea de metros cuadrados o solo la dirección del terreno. Lo revisamos y te llega el precio en menos de 24 horas.
+        </p>
+        <div style="display:flex;gap:16px;align-items:center;padding:20px;background:#fff;border:1px solid #D4E2E2;margin-bottom:16px">
+          <div aria-hidden="true" style="width:58px;height:58px;flex:none;background:repeating-linear-gradient(135deg,#EDF3F3 0 6px,#DCE9E9 6px 12px);border:1px solid #D4E2E2;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:.5rem;color:#6B8388;text-align:center;line-height:1.2">FOTO<br>PABLO</div>
+          <div>
+            <b style="display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:1rem">Pablo Guerrero</b>
+            <span style="font-size:.9rem;color:#3D5A5F;font-weight:300">Administrador. Contesta él, no un call center.</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;background:#25603F;color:#fff;font-family:Archivo,sans-serif;font-weight:700;font-size:.98rem;padding:15px 24px;min-height:54px;border-radius:3px;text-decoration:none;transition:background-color .2s,transform .2s" style-hover="background:#1C4B31;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:21px;height:21px;flex:none"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"></path><path d="M12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"></path></svg>
+            Prefiero escribir por WhatsApp
+          </a>
+          <a href="tel:+56974184647" style="display:inline-flex;align-items:center;gap:11px;font-family:Archivo,sans-serif;font-weight:800;font-size:1.32rem;letter-spacing:-.02em;color:#006D77;text-decoration:none;padding:8px 0;border-bottom:3px solid transparent;width:fit-content;transition:border-color .2s,color .2s" style-hover="border-bottom-color:#006D77;color:#05343A">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" style="width:24px;height:24px;flex:none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>
+            +56 9 7418 4647
+          </a>
+        </div>
+      </div>
+
+      <form class="rv" onSubmit="{{ enviar }}" style="background:#fff;border:1px solid #D4E2E2;border-top:4px solid #006D77;padding:34px 30px;display:flex;flex-direction:column;gap:18px;box-shadow:0 30px 60px -50px rgba(5,52,58,.9)">
+        <div>
+          <p style="font-family:Archivo,sans-serif;font-weight:800;font-size:1.16rem;margin:0 0 4px">Pide tu cotización</p>
+          <p style="margin:0;font-size:.88rem;color:#6B8388;font-weight:300">Cuatro datos y listo. Se abre WhatsApp con el mensaje ya escrito.</p>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:7px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#3D5A5F">Tu nombre</span>
+          <input type="text" name="nombre" value="{{ f.nombre }}" onChange="{{ cambio }}" placeholder="Nombre y apellido" style="border:1px solid #D4E2E2;background:#F8F9FA;border-radius:3px;padding:14px 15px;font-size:.98rem;min-height:52px;transition:border-color .2s,background-color .2s,box-shadow .2s" style-focus="border-color:#006D77;background:#fff;box-shadow:0 0 0 3px rgba(0,168,171,.15);outline:none">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:7px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#3D5A5F">Qué necesitas construir</span>
+          <select name="tipo" value="{{ f.tipo }}" onChange="{{ cambio }}" style="border:1px solid #D4E2E2;background:#F8F9FA;border-radius:3px;padding:14px 15px;font-size:.98rem;min-height:52px;transition:border-color .2s,background-color .2s,box-shadow .2s" style-focus="border-color:#006D77;background:#fff;box-shadow:0 0 0 3px rgba(0,168,171,.15);outline:none">
+            <sc-for list="{{ tipos }}" as="t" hint-placeholder-count="7">
+              <option value="{{ t }}">{{ t }}</option>
+            </sc-for>
+          </select>
+        </label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <label style="display:flex;flex-direction:column;gap:7px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#3D5A5F">Comuna o ciudad</span>
+            <input type="text" name="comuna" value="{{ f.comuna }}" onChange="{{ cambio }}" placeholder="Dónde queda la obra" style="border:1px solid #D4E2E2;background:#F8F9FA;border-radius:3px;padding:14px 15px;font-size:.98rem;min-height:52px;transition:border-color .2s,background-color .2s,box-shadow .2s" style-focus="border-color:#006D77;background:#fff;box-shadow:0 0 0 3px rgba(0,168,171,.15);outline:none">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:7px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#3D5A5F">Tu teléfono</span>
+            <input type="tel" name="fono" value="{{ f.fono }}" onChange="{{ cambio }}" placeholder="+56 9 ..." style="border:1px solid #D4E2E2;background:#F8F9FA;border-radius:3px;padding:14px 15px;font-size:.98rem;min-height:52px;transition:border-color .2s,background-color .2s,box-shadow .2s" style-focus="border-color:#006D77;background:#fff;box-shadow:0 0 0 3px rgba(0,168,171,.15);outline:none">
+          </label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:7px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#3D5A5F">Detalles <span style="text-transform:none;letter-spacing:0;color:#6B8388">(opcional)</span></span>
+          <textarea name="detalle" value="{{ f.detalle }}" onChange="{{ cambio }}" rows="3" placeholder="Metros cuadrados, plazos, si ya tienes planos" style="border:1px solid #D4E2E2;background:#F8F9FA;border-radius:3px;padding:14px 15px;font-size:.98rem;resize:vertical;font-family:inherit;transition:border-color .2s,background-color .2s,box-shadow .2s" style-focus="border-color:#006D77;background:#fff;box-shadow:0 0 0 3px rgba(0,168,171,.15);outline:none"></textarea>
+        </label>
+        <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;gap:11px;background:#F4D6A6;color:#05343A;font-family:Archivo,sans-serif;font-weight:800;font-size:1.04rem;padding:17px 26px;min-height:60px;border:none;border-radius:3px;cursor:pointer;box-shadow:0 5px 0 0 #D8B87E;transition:background-color .18s,box-shadow .18s,transform .18s" style-hover="background:#FFE7BE;box-shadow:0 8px 0 0 #D8B87E;transform:translateY(-3px)" style-active="box-shadow:0 2px 0 0 #D8B87E;transform:translateY(2px)">
+          Enviar y recibir mi precio
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+        <p style="margin:0;font-size:.8rem;color:#6B8388;font-weight:300;text-align:center">Sin costo y sin compromiso. Usamos tus datos solo para responderte.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="padding:84px 0;background:#EDF3F3">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+    <div class="rv" style="max-width:66ch">
+      <p style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#00A8AB;margin:0 0 18px">
+        <span aria-hidden="true" style="width:28px;height:2px;background:#00A8AB;flex:none"></span>Sectores
+      </p>
+      <h2 style="font-family:Archivo,sans-serif;font-size:clamp(1.8rem,3.8vw,2.7rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 16px">Dónde trabajamos.</h2>
+      <p style="font-size:1.04rem;color:#3D5A5F;font-weight:300;margin:0 0 34px">Si tu proyecto no está en la lista, escríbenos igual. La mayoría de las obras comparten las mismas partidas.</p>
+    </div>
+    <div class="rv" style="display:flex;flex-wrap:wrap;gap:10px">
+      <sc-for list="{{ sectores }}" as="x" hint-placeholder-count="12">
+        <span style="border:1px solid #D4E2E2;background:#F8F9FA;padding:11px 18px;border-radius:2px;font-size:.9rem;color:#3D5A5F;transition:border-color .2s,color .2s,background-color .2s,transform .2s" style-hover="border-color:#006D77;color:#006D77;background:#fff;transform:translateY(-2px)">{{ x }}</span>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" style="padding:94px 0;background:#F8F9FA">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+    <div class="rv" style="max-width:66ch">
+      <p style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#00A8AB;margin:0 0 18px">
+        <span aria-hidden="true" style="width:28px;height:2px;background:#00A8AB;flex:none"></span>Quiénes somos
+      </p>
+      <h2 style="font-family:Archivo,sans-serif;font-size:clamp(2rem,4.4vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin:0 0 16px;text-wrap:balance">Para qué estamos, qué hacemos y hacia dónde vamos.</h2>
+      <p style="font-size:1.06rem;color:#3D5A5F;font-weight:300;margin:0 0 48px">Tres cosas que ordenan las decisiones que tomamos en obra.</p>
+    </div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      <sc-for list="{{ adn }}" as="a" hint-placeholder-count="3">
+        <article style="background:#fff;border:1px solid #D4E2E2;border-top:4px solid #006D77;padding:34px 30px;display:flex;flex-direction:column;transition:border-top-color .25s,box-shadow .25s,transform .25s" style-hover="border-top-color:#F4D6A6;box-shadow:0 22px 44px -32px rgba(5,52,58,.6);transform:translateY(-3px)">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#00A8AB;margin-bottom:12px">{{ a.k }}</div>
+          <h3 style="font-family:Archivo,sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:0 0 14px">{{ a.t }}</h3>
+          <p style="margin:0;font-size:1rem;line-height:1.62;color:#0B2126">{{ a.d }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#05343A;color:#fff;text-align:center;padding:132px 0 128px;position:relative;overflow:hidden;isolation:isolate">
+  <img class="kb" src="assets/faena-equipo.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.34;filter:saturate(.6)">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(5,52,58,.78),rgba(0,109,119,.72))"></div>
+  <div class="rv" style="position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 24px">
+    <h2 style="font-family:Archivo,sans-serif;font-size:clamp(2.2rem,5.6vw,4rem);font-weight:300;letter-spacing:-.04em;line-height:1.03;margin:0 auto 18px;max-width:22ch;color:#fff;text-wrap:balance">Tu obra puede <b style="font-weight:900">empezar este mes.</b></h2>
+    <p style="font-size:1.06rem;color:#D6EDED;max-width:50ch;margin:0 auto 32px;font-weight:300">Pide la cotización hoy y en menos de 24 horas sabes cuánto cuesta y cuánto demora.</p>
+    <a href="#cotizar" style="display:inline-flex;align-items:center;gap:11px;background:#F4D6A6;color:#05343A;font-family:Archivo,sans-serif;font-weight:800;font-size:1.06rem;padding:18px 32px;min-height:60px;border-radius:3px;text-decoration:none;box-shadow:0 5px 0 0 #C9A468;transition:background-color .18s,box-shadow .18s,transform .18s" style-hover="background:#FFE7BE;box-shadow:0 8px 0 0 #C9A468;transform:translateY(-3px)" style-active="box-shadow:0 2px 0 0 #C9A468;transform:translateY(2px)">
+      Pedir cotización
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </div>
+</section>
+
+<footer style="background:#05343A;color:#8FB2B2;padding:52px 0 40px;font-size:.88rem">
+  <div style="max-width:1180px;margin:0 auto;padding:0 24px">
+    <div style="display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(125,211,206,.16)">
+      <a href="#top" aria-label="CGuerrero, volver arriba" style="display:flex;align-items:center;gap:11px;text-decoration:none">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true" style="width:36px;height:36px;flex:none">
+          <path d="M4 33 L20 5 L36 33 Z" stroke="#7DD3CE" stroke-width="2.4" stroke-linejoin="round"></path>
+          <path d="M12 33 L20 19 L28 33" stroke="#F4D6A6" stroke-width="2.4" stroke-linejoin="round"></path>
+          <path d="M4 33 H36" stroke="#00A8AB" stroke-width="2.4" stroke-linecap="round"></path>
+        </svg>
+        <span>
+          <span style="display:block;font-family:Archivo,sans-serif;font-weight:800;font-size:1.05rem;color:#fff;line-height:1.1">CGuerrero</span>
+          <span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#7DD3CE;text-transform:uppercase">Construcciones</span>
+        </span>
+      </a>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <a href="tel:+56974184647" style="font-family:Archivo,sans-serif;font-weight:700;font-size:1.1rem;color:#F4D6A6;text-decoration:none">+56 9 7418 4647</a>
+        <span>Pablo Guerrero, Administrador</span>
+        <span>Zona centro sur de Chile</span>
+      </div>
+      <nav aria-label="Secciones" style="display:flex;flex-wrap:wrap;gap:8px 26px">
+        <a href="#servicios" style="color:#8FB2B2;text-decoration:none;transition:color .2s" style-hover="color:#7DD3CE">Servicios</a>
+        <a href="#obras" style="color:#8FB2B2;text-decoration:none;transition:color .2s" style-hover="color:#7DD3CE">Obras</a>
+        <a href="#valor" style="color:#8FB2B2;text-decoration:none;transition:color .2s" style-hover="color:#7DD3CE">Por qué nosotros</a>
+        <a href="#proceso" style="color:#8FB2B2;text-decoration:none;transition:color .2s" style-hover="color:#7DD3CE">Cómo trabajamos</a>
+        <a href="#cotizar" style="color:#8FB2B2;text-decoration:none;transition:color .2s" style-hover="color:#7DD3CE">Cotizar</a>
+      </nav>
+    </div>
+    <div style="padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.82rem">
+      <span>© 2026 CGuerrero Construcciones</span>
+      <span>Obras civiles · Edificación · Estructuras · Arriendo de maquinaria</span>
+    </div>
+  </div>
+</footer>
+
+<div data-barra-movil="" style="position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:1px;background:rgba(5,52,58,.2);box-shadow:0 -8px 24px -12px rgba(5,52,58,.5)">
+  <a href="{{ waLink }}" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:#25603F;color:#fff;font-family:Archivo,sans-serif;font-weight:700;font-size:.92rem;min-height:60px;text-decoration:none">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:19px;height:19px"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"></path><path d="M12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"></path></svg>
+    WhatsApp
+  </a>
+  <a href="#cotizar" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:#F4D6A6;color:#05343A;font-family:Archivo,sans-serif;font-weight:800;font-size:.92rem;min-height:60px;text-decoration:none">Pedir cotización</a>
+</div>
+
+<a data-fab="" href="{{ waLink }}" target="_blank" rel="noopener" aria-label="Escribir a CGuerrero por WhatsApp" style="position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:11px;background:#25603F;color:#fff;text-decoration:none;padding:15px 22px;border-radius:100px;font-family:Archivo,sans-serif;font-weight:700;font-size:.92rem;min-height:56px;box-shadow:0 12px 32px -10px rgba(5,52,58,.6);transition:background-color .2s,box-shadow .2s,transform .2s" style-hover="background:#1C4B31;transform:translateY(-3px);box-shadow:0 18px 40px -10px rgba(5,52,58,.7)">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:23px;height:23px;flex:none"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"></path><path d="M12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"></path></svg>
+  <span data-fab-t="">Hablar con Pablo</span>
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;anios&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:12,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:1,&quot;max&quot;:60,&quot;unit&quot;:&quot;años&quot;,&quot;section&quot;:&quot;Contenido&quot;}}">
+function svgIco(d) {
+  return React.createElement("svg", {
+    viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5,
+    "aria-hidden": "true", style: { width: "100%", height: "100%" }
+  }, React.createElement("path", { d: d }));
+}
+const ICO = {
+  edif: svgIco("M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 11h.01M15 11h.01"),
+  civil: svgIco("M2 20h20M4 20v-6l8-5 8 5v6M7 20v-4h3v4M14 20v-4h3v4M12 9V4M9 4h6"),
+  metal: svgIco("M3 4h18M3 20h18M6 4v16M18 4v16M6 8l12 8M18 8L6 16M6 12h12"),
+  retail: svgIco("M2 21h20M4 21V9h16v12M4 13h16M8 21v-4h3v4M13 21v-4h3v4M7 9V5h10v4"),
+  puente: svgIco("M2 16h20M4 16v-4M20 16v-4M2 12c4-5 16-5 20 0M8 16v5M16 16v5M12 12v9"),
+  maq: svgIco("M3 17h13v-5l-3-4H8L3 12v5zM3 17a2 2 0 1 0 4 0M12 17a2 2 0 1 0 4 0M16 12h5v5h-2M18 12V7h-5")
+};
+
+class Component extends DCLogic {
+  state = { idx: 0, f: { nombre: "", tipo: "Edificación comercial o industrial", comuna: "", fono: "", detalle: "" } };
+
+  componentDidMount() {
+    this.aplicar();
+    this._r = () => this.aplicar();
+    window.addEventListener("resize", this._r);
+    this._s = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => { this._raf = 0; this.alScroll(); });
+    };
+    window.addEventListener("scroll", this._s, { passive: true });
+    document.addEventListener("scroll", this._s, { passive: true, capture: true });
+    this._css = !!(window.CSS && CSS.supports && CSS.supports("animation-timeline", "view()"));
+    this.alScroll();
+    this.pintarSlides();
+    this.nav(false);
+    const cent = (this.el || document).querySelector("[data-top-sentinel]");
+    if (cent && window.IntersectionObserver) {
+      this._io = new IntersectionObserver((ents) => this.nav(!ents[0].isIntersecting), { threshold: 0 });
+      this._io.observe(cent);
+    }
+    this._t = setInterval(() => {
+      if (!document.hidden && !this._pausa) this.setState((s) => ({ idx: (s.idx + 1) % 4 }));
+    }, 6500);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._r);
+    window.removeEventListener("scroll", this._s);
+    document.removeEventListener("scroll", this._s, true);
+    clearInterval(this._t);
+    if (this._io) this._io.disconnect();
+  }
+
+  nav(on) {
+    const root = this.el || document;
+    const nav = root.querySelector("[data-nav]"), inner = root.querySelector("[data-nav-inner]");
+    if (nav) {
+      nav.style.backgroundImage = "none";
+      nav.style.backgroundColor = on ? "rgba(5,52,58,.96)" : "rgba(5,52,58,.28)";
+      nav.style.backdropFilter = on ? "blur(14px)" : "blur(4px)";
+      nav.style.borderBottomColor = on ? "rgba(125,211,206,.2)" : "rgba(125,211,206,0)";
+    }
+    if (inner) inner.style.height = on ? "66px" : "84px";
+  }
+
+  alScroll() {
+    const root = this.el || document;
+    const q = (s) => root.querySelector(s);
+    const hero = q("#top");
+    if (hero) this.nav(Math.max(0, -hero.getBoundingClientRect().top) > 90);
+    const vis = this._css ? null : q("[data-vision]");
+    if (vis) {
+      const r = vis.getBoundingClientRect();
+      const total = r.height - window.innerHeight;
+      let p = total > 0 ? -r.top / total : 0;
+      p = Math.max(0, Math.min(1, p));
+      const e = p < 0.14 ? 0 : p > 0.9 ? 1 : (p - 0.14) / 0.76;
+      const b = q("[data-vision-b]"), ln = q("[data-vision-line]"), bar = q("[data-vision-bar]");
+      const t1 = q("[data-vision-t1]"), t2 = q("[data-vision-t2]");
+      if (b) b.style.clipPath = "inset(0 " + ((1 - e) * 100).toFixed(2) + "% 0 0)";
+      if (ln) { ln.style.left = (e * 100).toFixed(2) + "%"; ln.style.opacity = e > 0.01 && e < 0.99 ? "1" : "0"; }
+      if (bar) bar.style.width = (e * 100).toFixed(1) + "%";
+      const sw = e < 0.42 ? 0 : e > 0.62 ? 1 : (e - 0.42) / 0.2;
+      if (t1) t1.style.opacity = String(1 - sw);
+      if (t2) t2.style.opacity = String(sw);
+    }
+  }
+
+  ir = (d) => {
+    this._pausa = true;
+    this.setState((s) => ({ idx: (s.idx + d + 4) % 4 }), this.pintarSlides);
+  };
+
+  pintarSlides = () => {
+    const root = this.el || document;
+    const s = root.querySelectorAll("[data-slide]");
+    for (let k = 0; k < s.length; k++) {
+      const on = k === this.state.idx;
+      s[k].style.opacity = on ? "1" : "0";
+      const im = s[k].querySelector("img");
+      if (im) im.style.transform = on ? "scale(1.07)" : "scale(1)";
+    }
+  };
+
+  componentDidUpdate(_p, prev) {
+    if (!prev || prev.idx !== this.state.idx) this.pintarSlides();
+  }
+
+  aplicar() {
+    const root = this.el || document;
+    const w = window.innerWidth;
+    const q = (s) => root.querySelector(s);
+    const nav = q("[data-nav-links]");
+    if (nav) nav.style.display = w < 940 ? "none" : "flex";
+    const g = (s, v) => { const e = q(s); if (e) e.style.gridTemplateColumns = v; };
+    g("[data-intro-grid]", w < 900 ? "1fr" : "1.05fr .95fr");
+    g("[data-hero-grid]", w < 1040 ? "minmax(0,1fr)" : "minmax(0,668px) 1fr");
+    const mos = q("[data-mosaic]");
+    if (mos) {
+      const dos = w < 780;
+      mos.style.gridTemplateColumns = dos ? "repeat(2,1fr)" : "repeat(4,1fr)";
+      const kids = mos.children;
+      const pos = [["1", "1/3"], ["2", "1"], ["3/5", "1"], ["2/4", "2"], ["4", "2"]];
+      for (let i = 0; i < kids.length; i++) {
+        kids[i].style.gridColumn = dos ? "auto" : (pos[i] ? pos[i][0] : "auto");
+        kids[i].style.gridRow = dos ? "auto" : (pos[i] ? pos[i][1] : "auto");
+      }
+    }
+    g("[data-valor-grid]", w < 940 ? "1fr" : "1.02fr .98fr");
+    g("[data-cot-grid]", w < 980 ? "1fr" : "1fr 1.08fr");
+    const barra = q("[data-barra-movil]"), fab = q("[data-fab]"), ft = q("[data-fab-t]");
+    const movil = w < 720;
+    if (barra) barra.style.display = movil ? "flex" : "none";
+    if (fab) fab.style.display = movil ? "none" : "flex";
+    if (ft) ft.style.display = w < 560 ? "none" : "inline";
+  }
+
+  cambio = (e) => {
+    const { name, value } = e.target;
+    this.setState((s) => ({ f: Object.assign({}, s.f, { [name]: value }) }));
+  };
+
+  enviar = (e) => {
+    e.preventDefault();
+    const f = this.state.f;
+    const l = [
+      "Hola Pablo, quiero cotizar una obra.",
+      f.nombre ? "Nombre: " + f.nombre : "",
+      "Tipo: " + f.tipo,
+      f.comuna ? "Comuna: " + f.comuna : "",
+      f.fono ? "Teléfono: " + f.fono : "",
+      f.detalle ? "Detalles: " + f.detalle : ""
+    ].filter(Boolean).join("\n");
+    window.open("https://wa.me/56974184647?text=" + encodeURIComponent(l), "_blank", "noopener");
+  };
+
+  renderVals() {
+    const anios = this.props.anios ?? 12;
+    const obras = [
+      { img: "assets/obra-puente-hd.jpg", cat: "Infraestructura vial", t: "Montaje de puente y estribos de hormigón", d: "Movimiento de tierra, fundaciones y montaje de viga metálica con grúa.", alt: "Viga metálica de puente montada sobre estribo de hormigón" },
+      { img: "assets/obra-aerea-hd.jpg", cat: "Comercial", t: "Estructura y explanación de stripcenter", d: "Explanación del terreno, radier y estructura de acero lista para terminaciones.", alt: "Vista aérea de estructura metálica de edificio comercial en construcción" },
+      { img: "assets/obra-losa-hd.jpg", cat: "Obra gruesa", t: "Enfierradura y moldaje de losa", d: "Armadura, moldaje y hormigonado con control de resistencia por probeta.", alt: "Enfierradura y moldaje de losa lista para hormigonar" },
+      { img: "assets/vision-construido.jpg", cat: "Retail", t: "Stripcenter terminado y recibido", d: "Obra completa: estructura, instalaciones, terminaciones y recepción municipal.", alt: "Stripcenter terminado y entregado" }
+    ];
+    const i = this.state.idx;
+    return {
+      contador: (i + 1) + " / " + obras.length,
+      progreso: (((i + 1) / obras.length) * 100).toFixed(0) + "%",
+      prev: () => this.ir(-1),
+      next: () => this.ir(1),
+      waLink: "https://wa.me/56974184647?text=" + encodeURIComponent("Hola Pablo, quiero cotizar una obra con CGuerrero."),
+      aniosTexto: anios + " años en obra",
+      f: this.state.f,
+      cambio: this.cambio,
+      enviar: this.enviar,
+      capacidades: ["Edificación", "Obras civiles", "Estructuras metálicas", "Stripcenters", "Puentes", "Arriendo de maquinaria"],
+      tipos: [
+        "Edificación comercial o industrial",
+        "Galpón o bodega industrial",
+        "Stripcenter o local de retail",
+        "Obra civil (fundaciones, pavimentos, movimiento de tierra)",
+        "Estructura metálica",
+        "Puente o infraestructura vial",
+        "Arriendo de maquinaria",
+        "Otra cosa, lo explico abajo"
+      ],
+      servicios: [
+        { ico: ICO.edif, t: "Edificación", d: "Obra gruesa y terminaciones para proyectos habitacionales, comerciales e industriales, con control de avance por partida." },
+        { ico: ICO.civil, t: "Obras civiles", d: "Fundaciones, radieres, pavimentos, movimiento de tierra, canalizaciones y urbanización." },
+        { ico: ICO.metal, t: "Estructuras metálicas", d: "Fabricación y montaje en acero: galpones, entrepisos, techumbres y refuerzos estructurales." },
+        { ico: ICO.retail, t: "Stripcenters y retail", d: "Stripcenters de principio a fin: estructura, instalaciones, terminaciones y recepción municipal." },
+        { ico: ICO.puente, t: "Puentes e infraestructura", d: "Pasarelas, puentes menores y obras de arte vial, con la ingeniería y los ensayos que pide la faena." },
+        { ico: ICO.maq, t: "Arriendo de maquinaria", d: "Excavadoras, retroexcavadoras, cargadores y camiones a disposición de tu obra, operados y respaldados.", tag: "Red de aliados" }
+      ],
+      ventajas: [
+        { t: "Un solo responsable", d: "Firmas un contrato y hablas con una persona. Coordinar las especialidades es problema nuestro." },
+        { t: "Maquinaria", d: "Tenemos el equipo en faena en la fecha acordada, así la obra no se detiene esperando un arriendo." },
+        { t: "Presupuesto a medida", d: "Cubicamos en detalle antes de partir y te avisamos cualquier desviación que pueda surgir." },
+        { t: "Avance que puedes ver", d: "Reportes con evidencia y estado real de la faena sin sorpresas." }
+      ],
+      etapas: [
+        { n: "ETAPA 01", t: "Visita al terreno", d: "Vamos, medimos y entendemos qué necesitas de verdad." },
+        { n: "ETAPA 02", t: "Cubicación y precio", d: "Presupuesto por partida y carta Gantt, en menos de 24 horas." },
+        { n: "ETAPA 03", t: "Movilización", d: "Equipo, maquinaria y materiales en faena antes de la fecha de inicio." },
+        { n: "ETAPA 04", t: "Ejecución con reportes", d: "Avance por partida, fotos y control de desviaciones." },
+        { n: "ETAPA 05", t: "Entrega y respaldo", d: "Recepción conforme, documentación completa y garantía por escrito." }
+      ],
+      sectores: ["Retail y stripcenters", "Galpones industriales", "Bodegas y centros de acopio", "Edificios de oficinas", "Proyectos habitacionales", "Urbanización de loteos", "Infraestructura vial", "Puentes y pasarelas", "Plantas de tratamiento", "Cierres perimetrales", "Obras para minería y energía", "Mantención industrial"],
+      adn: [
+        { k: "01 · El porqué", t: "Propósito", d: "Construir la infraestructura con la que trabaja y se mueve la zona centro sur: los locales, las bodegas, los caminos y los puentes que usa la gente todos los días." },
+        { k: "02 · El qué", t: "Misión", d: "Ejecutar obras civiles, estructuras y edificación para empresas e inversionistas en Chile, integrando maquinaria y especialistas para entregar la obra completa con un solo responsable." },
+        { k: "03 · Hacia dónde", t: "Visión", d: "Ser al 2032 la constructora de referencia en proyectos comerciales e industriales de la zona centro sur, reconocida por entregar en el plazo comprometido y sin desviarse del presupuesto." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
